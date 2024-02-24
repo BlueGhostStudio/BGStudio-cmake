@@ -13,6 +13,11 @@ set(BGMRPC_CLIENT
     "${CMAKE_INSTALL_PREFIX}/BGMRPC${CLIENT_DIR}"
     CACHE STRING "")
 
+add_definitions(-DREMOTEPATH="${BGMRPC_REMOTE}")
+add_definitions(-DCLIENTPATH="${BGMRPC_REMOTE}")
+add_definitions(
+  -DDEFAULT_ETC_DIR="${BGMRPC_REMOTE}/${CMAKE_INSTALL_DATADIR}/etc")
+
 set(BGMRPCCommon_includeDir
     ${CMAKE_CURRENT_LIST_DIR}/../BGMRPCCommon
     CACHE PATH "")
