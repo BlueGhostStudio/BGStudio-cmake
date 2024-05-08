@@ -19,8 +19,8 @@ add_definitions(
   -DDEFAULT_ETC_DIR="${BGMRPC_REMOTE}/${CMAKE_INSTALL_DATADIR}/etc")
 
 set(BGMRPCCommon_includeDir
-    ${CMAKE_CURRENT_LIST_DIR}/../BGMRPCCommon
+    ${CMAKE_SOURCE_DIR}/BGMRPCCommon
     CACHE PATH "")
 set(BGMRPCObjectInterface_includeDir
-    ${CMAKE_CURRENT_LIST_DIR}/../BGMRPCObjectInterface
+    ${CMAKE_SOURCE_DIR}/BGMRPCObjectInterface
     CACHE PATH "")
