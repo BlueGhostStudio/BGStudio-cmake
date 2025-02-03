@@ -18,9 +18,16 @@ add_definitions(-DCLIENTPATH="${BGMRPC_REMOTE}")
 add_definitions(
   -DDEFAULT_ETC_DIR="${BGMRPC_REMOTE}/${CMAKE_INSTALL_DATADIR}/etc")
 
+# 检查变量是否存在
+if(NOT DEFINED BGMRPC_SRC_DIR)
+    message(FATAL_ERROR "BGMRPC_SRC_DIR is not defined. Please set BGMRPC_SRC_DIR before running CMake.")
+endif()
+
+# 如果存在，设置路径变量
 set(BGMRPCCommon_includeDir
-    ${CMAKE_SOURCE_DIR}/BGMRPCCommon
-    CACHE PATH "")
+    ${BGMRPC_SRC_DIR}/BGMRPCCommon
+    CACHE PATH "Path to BGMRPCCommon include directory")
+
 set(BGMRPCObjectInterface_includeDir
-    ${CMAKE_SOURCE_DIR}/BGMRPCObjectInterface
-    CACHE PATH "")
+    ${BGMRPC_SRC_DIR}/BGMRPCObjectInterface
+    CACHE PATH "Path to BGMRPCObjectInterface include directory")
